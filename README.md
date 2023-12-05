@@ -1,6 +1,7 @@
 # ARG and Mobilome annotation - read-based pipeline
 Read-based pipeline for the annotation of Antibiotic resistance and mobilome genes.
 
+Authors: Ahmed Bargheet, Alise Ponsero, Hanna Noordzij, Ching Jian, Katri Korpela, Mireia Valles-Colomer, Justine Debelius, Alexander Kurilshikov, Veronika K. Pettersen
 
 ## Installation and requirements
 This pipeline requires the use of Snakemake  and usearch v11. 
@@ -30,9 +31,9 @@ Additionally, custom shortbred databases should be downloaded.
 
 Below is the overview of the steps included in the pipeline. The pipeline requires reads after quality control and trimming.
 The pipeline include 3 steps :
-* Taxonomic profiling of the microbial community using Metaphlan4 vXX
-* ARG profiling using Shortbred vXX against the CARD database vXX
-* Mobilome profiling using Shortbred against the MobileOG database vXX
+* Taxonomic profiling of the microbial community using Metaphlan4 v4.0.6
+* ARG profiling using Shortbred v0.9.5 against the CARD database v.3.2.7
+* Mobilome profiling using Shortbred v0.9.5 against the MobileOG database v1.6
 
 ```mermaid
 graph LR
