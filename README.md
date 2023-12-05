@@ -1,7 +1,7 @@
 # ARG and Mobilome annotation - read-based pipeline
 Read-based pipeline for the annotation of Antibiotic resistance and mobilome genes.
 
-Authors: Ahmed Bargheet, Alise Ponsero, Hanna Noordzij, Ching Jian, Katri Korpela, Mireia Valles-Colomer, Justine Debelius, Alexander Kurilshikov, Veronika K. Pettersen
+**Authors**: Ahmed Bargheet, Alise Ponsero, Hanna Noordzij, Ching Jian, Katri Korpela, Mireia Valles-Colomer, Justine Debelius, Alexander Kurilshikov, Veronika K. Pettersen
 
 ## Installation and requirements
 This pipeline requires the use of Snakemake  and usearch v11. 
@@ -62,7 +62,7 @@ graph LR
 ```
 
 ## How to run the pipeline
-The pipeline expects the inputs to be provided in the "input" folder as paired files (${SAMPLE_ID}_1.fq.gz and ${SAMPLE_ID}_2.fq.gz) and can be run in its entirety by providing the expected final output : ${SAMPLE_ID}__finallog.txt 
+The pipeline expects the inputs to be provided in the "input" folder as paired files ({sample_id}_1.fq.gz and {sample_id}_2.fq.gz) and can be run in its entirety by providing the expected final output : {sample_id}__finallog.txt 
 
 As an example, to run the pipeline on the test file (testpipeline_1.fq.gz and testpipeline_2.fq.gz):
 
@@ -70,5 +70,12 @@ As an example, to run the pipeline on the test file (testpipeline_1.fq.gz and te
 # run snakemake
 snakemake --cores 8 --use-conda results/testpipeline_finallog.txt
 ```
+
+### Expected outputs
+
+The pipeline will generate 3 main output files in the results folder:
+* Taxonomic profile for each sample : results/Metaphlan/${sample_id}_profile.txt
+* Resistome profile for each sample : results/Resistome/{sample}_resistome.txt
+* Mobilome profile for each sample : results/Mobilome/{sample}_mobilome.txt
 
 
