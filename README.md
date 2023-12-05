@@ -64,11 +64,11 @@ graph LR
 ## How to run the pipeline
 The pipeline expects the inputs to be provided in the "input" folder as paired files ({sample_id}_1.fastq.gz and {sample_id}_2.fastq.gz) and can be run in its entirety by providing the expected final output : {sample_id}__finallog.txt 
 
-As an example, to run the pipeline on the test file (testpipeline_1.fastq.gz and testpipeline_2.fastq.gz):
+As an example, to run the pipeline on the test file (TestPipeline_1.fastq.gz and TestPipeline_2.fastq.gz):
 
 ```
 # run snakemake
-snakemake --cores 8 --use-conda results/testpipeline_finallog.txt
+snakemake --cores 8 --use-conda results/TestPipeline_finallog.txt
 ```
 
 ### Expected outputs
