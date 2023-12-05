@@ -62,9 +62,9 @@ graph LR
 ```
 
 ## How to run the pipeline
-The pipeline expects the inputs to be provided in the "input" folder as paired files ({sample_id}_1.fq.gz and {sample_id}_2.fq.gz) and can be run in its entirety by providing the expected final output : {sample_id}__finallog.txt 
+The pipeline expects the inputs to be provided in the "input" folder as paired files ({sample_id}_1.fastq.gz and {sample_id}_2.fastq.gz) and can be run in its entirety by providing the expected final output : {sample_id}__finallog.txt 
 
-As an example, to run the pipeline on the test file (testpipeline_1.fq.gz and testpipeline_2.fq.gz):
+As an example, to run the pipeline on the test file (testpipeline_1.fastq.gz and testpipeline_2.fastq.gz):
 
 ```
 # run snakemake
