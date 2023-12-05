@@ -23,7 +23,8 @@ mv usearch11.0.667_i86linux32.gz usearch
 ```
 
 Additionally, custom shortbred databases should be downloaded.
-** Add here Zenodo link to download database
+
+** Add here Zenodo link to download database **
 
 ## Overview of the pipeline
 
@@ -33,7 +34,40 @@ The pipeline include 3 steps :
 * ARG profiling using Shortbred vXX against the CARD database vXX
 * Mobilome profiling using Shortbred against the MobileOG database vXX
 
-## Use the pipeline
+```mermaid
+graph LR
+    reads[(QC reads)] --> concat_reads ;
+    concat_reads --> Metaphlan4 ;
+    concat_reads --> Shortbred_ARG ;
+    concat_reads --> Shortbred_MobileOG;
+    Metaphlan4 --> Taxonomic_profiles ;
+    Shortbred_ARG --> Resistome_profiles ;
+    Shortbred_MobileOG --> Mobilome_profiles ;
+    subgraph Rule Concat
+        concat_reads ;
+    end
+    subgraph Rule Metaphlan
+        Metaphlan4 ;
+        Taxonomic_profiles;
+    end
+    subgraph Rule Resistome
+        Shortbred_ARG ;
+        Resistome_profiles ;
+    end
+    subgraph Rule Mobilome
+        Shortbred_MobileOG ;
+        Mobilome_profiles ;
+    end
+```
 
+## How to run the pipeline
+The pipeline expects the inputs to be provided in the "input" folder as paired files (${SAMPLE_ID}_1.fq.gz and ${SAMPLE_ID}_2.fq.gz) and can be run in its entirety by providing the expected final output : ${SAMPLE_ID}__finallog.txt 
+
+As an example, to run the pipeline on the test file (testpipeline_1.fq.gz and testpipeline_2.fq.gz):
+
+```
+# run snakemake
+snakemake --cores 8 --use-conda results/testpipeline_finallog.txt
+```
 
 
