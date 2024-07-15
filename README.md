@@ -19,8 +19,8 @@ conda activate snakemake_env
 conda install snakemake
 
 ## Installation of usearch v11
-mkdir usearch
-cd usearch
+mkdir bin
+cd bin
 wget https://drive5.com/downloads/usearch11.0.667_i86linux32.gz
 chmod +x usearch11.0.667_i86linux32.gz
 gunzip usearch11.0.667_i86linux32.gz
