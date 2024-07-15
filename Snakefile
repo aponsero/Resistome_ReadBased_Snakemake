@@ -52,8 +52,8 @@ rule Resistome:
         concat="input/{sample}_concat.fastq",
     params:
         outdir="results/Resistome",
-        database="databases/markers_shortbred/CARD_markers.faa",
-        temp="results/{sample}_temp/shortbred",
+        database="databases/CARD_V.3.2.7_markers.faa",
+        temp="results/{sample}_temp/shortbred_resistome",
     output:
         "results/Resistome/{sample}_resistome.txt",
     conda:
@@ -62,7 +62,7 @@ rule Resistome:
         """
         mkdir -p {params.temp}
 
-        export PATH="installation/usearch":$PATH
+        export PATH="$PWD/bin":$PATH
 
         shortbred_quantify.py --markers {params.database} --id .95 --pctlength .95 --threads 5 --wgs {input.concat} --results {output} --tmp {params.temp}
         rm -r {params.temp}
@@ -74,8 +74,8 @@ rule Mobilome:
         concat="input/{sample}_concat.fastq",
     params:
         outdir="results/Mobilome",
-        database="databases/markers_shortbred_MGE/mobile_OG_markers.faa",
-        temp="results/{sample}_temp/shortbred",
+        database="databases/mobile_OG_V.1.6_markers.faa",
+        temp="results/{sample}_temp/shortbred_mobilome",
     output:
         "results/Mobilome/{sample}_mobilome.txt",
     conda:
@@ -83,7 +83,7 @@ rule Mobilome:
     shell:
         """
         mkdir -p {params.temp}
-        export PATH="installation/usearch":$PATH
+        export PATH="$PWD/bin":$PATH
 
         shortbred_quantify.py --markers {params.database} --id .95 --pctlength .95 --threads 5 --wgs {input.concat} --results {output} --tmp {params.temp}
         rm -r {params.temp}
