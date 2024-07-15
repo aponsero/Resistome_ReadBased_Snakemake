@@ -8,7 +8,7 @@ This pipeline requires the use of Snakemake  and usearch v11.
 If not previously installed run the following code: 
 
 ```
-git clone git@github.com:aponsero/Resistome_ReadBased_Snakemake.git
+git clone https://github.com/aponsero/Resistome_ReadBased_Snakemake.git
 cd Resistome_ReadBased_Snakemake
 
 ## Snakemake installation in a conda environment
@@ -23,9 +23,13 @@ gunzip usearch11.0.667_i86linux32.gz
 mv usearch11.0.667_i86linux32.gz usearch
 ```
 
-Additionally, custom shortbred databases should be downloaded.
-
-** Add here Zenodo link to download database **
+Additionally, custom shortbred databases should be downloaded from [Zenodo](https://zenodo.org/records/11491353).
+```
+mkdir databases
+cd databases
+wget https://zenodo.org/records/11491353/files/CARD_V.3.2.7_markers.faa
+wget https://zenodo.org/records/11491353/files/mobile_OG_V.1.6_markers.faa
+```
 
 ## Overview of the pipeline
 
