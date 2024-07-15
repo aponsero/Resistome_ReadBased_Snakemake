@@ -13,6 +13,10 @@ cd Resistome_ReadBased_Snakemake
 
 ## Snakemake installation in a conda environment
 conda env create snakemake_env --file envs/env_snakemake.yml
+# Alternatively you can create the environment manually:
+conda env create -n snakemake_env
+conda activate snakemake_env
+conda install snakemake
 
 ## Installation of usearch v11
 mkdir usearch
