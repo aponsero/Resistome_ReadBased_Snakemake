@@ -23,12 +23,14 @@ gunzip usearch11.0.667_i86linux32.gz
 mv usearch11.0.667_i86linux32.gz usearch
 ```
 
-Additionally, custom shortbred databases should be downloaded from [Zenodo](https://zenodo.org/records/11491353).
+Additionally, custom shortbred databases should be downloaded from [Zenodo](https://zenodo.org/records/11491353) and from Metaphlan4.
 ```
 mkdir databases
 cd databases
 wget https://zenodo.org/records/11491353/files/CARD_V.3.2.7_markers.faa
 wget https://zenodo.org/records/11491353/files/mobile_OG_V.1.6_markers.faa
+wget http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/mpa_vOct22_CHOCOPhlAnSGB_202212.tar
+tar -xvf mpa_vOct22_CHOCOPhlAnSGB_202212.tar
 ```
 
 ## Overview of the pipeline
