@@ -33,8 +33,8 @@ mkdir databases
 cd databases
 wget https://zenodo.org/records/11491353/files/CARD_V.3.2.7_markers.faa
 wget https://zenodo.org/records/11491353/files/mobile_OG_V.1.6_markers.faa
-wget http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/mpa_vOct22_CHOCOPhlAnSGB_202212.tar
-tar -xvf mpa_vOct22_CHOCOPhlAnSGB_202212.tar
+wget http://cmprod1.cibio.unitn.it/biobakery4/metaphlan_databases/bowtie2_indexes/mpa_vOct22_CHOCOPhlAnSGB_202212_bt2.tar
+tar -xvf mpa_vOct22_CHOCOPhlAnSGB_202212_bt2.tar
 ```
 
 ## Overview of the pipeline
