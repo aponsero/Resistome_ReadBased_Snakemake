@@ -24,7 +24,7 @@ cd usearch
 wget https://drive5.com/downloads/usearch11.0.667_i86linux32.gz
 chmod +x usearch11.0.667_i86linux32.gz
 gunzip usearch11.0.667_i86linux32.gz
-mv usearch11.0.667_i86linux32.gz usearch
+mv usearch11.0.667_i86linux32 usearch
 ```
 
 Additionally, custom shortbred databases should be downloaded from [Zenodo](https://zenodo.org/records/11491353) and from Metaphlan4.
