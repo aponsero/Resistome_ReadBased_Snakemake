@@ -34,8 +34,8 @@ rule Metaphlan:
         concat="input/{sample}_concat.fastq",
     params:
         outdir="results/Metaphlan",
-        database="databases/Metaphlan",
-        database_name="mpa_vOct22_CHOCOPhlAnSGB_202212",
+        database="databases",
+        index="mpa_vOct22_CHOCOPhlAnSGB_202212",
         bowtieOut="results/Metaphlan/{sample}_bowtie.txt",
     output:
         "results/Metaphlan/{sample}_profile.txt",
@@ -43,7 +43,7 @@ rule Metaphlan:
         "envs/metaphlan4.yml",
     shell:
         """
-        metaphlan --bowtie2db {params.database} --index {params.database_name} --offline --bowtie2out {params.bowtieOut} -t rel_ab_w_read_stats --unclassified_estimation --input_type fastq {input.concat} {output} 
+        metaphlan {input.concat} --input_type fastq -o {output} --bowtie2db {params.database} -x {params.index} --offline --bowtie2out {params.bowtieOut} -t rel_ab_w_read_stats --unclassified_estimation 
         """
 
 
